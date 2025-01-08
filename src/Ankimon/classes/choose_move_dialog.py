@@ -21,7 +21,7 @@ class MoveSelectionDialog(QDialog):
         # Add a title label
         title_label = QLabel("请选择你的招数（按 1-4 或者直接点击选择）")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title_label.setFont(QFont("Arial", 14, QFont.Weight.Bold))
+        title_label.setFont(QFont("霞鹜文楷 GB 屏幕阅读版", 14, QFont.Weight.Bold))
         layout.addWidget(title_label)
 
         # Add labels for each move
@@ -30,7 +30,7 @@ class MoveSelectionDialog(QDialog):
             move_detail = find_details_move(move)
             move_label = QLabel(f"{index + 1}.{move_detail['name_zh']}({move_detail['basePower']}): {move_detail['shortDesc']}")
             move_label.setToolTip(f"{move_detail['desc']}")
-            move_label.setFont(QFont("宋体", 12))
+            move_label.setFont(QFont("微软雅黑", 12))
             move_label.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
             move_label.setStyleSheet("border: 1px solid #ccc; border-radius: 0px;")  # Removed padding, reduced border-radius
             move_label.mousePressEvent = self.create_mouse_press_handler(index)
